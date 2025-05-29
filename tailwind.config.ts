@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -165,6 +164,48 @@ export default {
 					'100%': {
 						backgroundPosition: '200% 0'
 					}
+				},
+				'zoom-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.5) rotate(-5deg)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1) rotate(0deg)'
+					}
+				},
+				'float-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px) scale(0.9)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					}
+				},
+				'blur-in': {
+					'0%': {
+						opacity: '0',
+						filter: 'blur(10px)',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						filter: 'blur(0px)',
+						transform: 'translateY(0)'
+					}
+				},
+				'rotate-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'rotate(-45deg) scale(0.5)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'rotate(0deg) scale(1)'
+					}
 				}
 			},
 			animation: {
@@ -178,7 +219,11 @@ export default {
 				'scale-in': 'scale-in 0.5s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-				'shimmer': 'shimmer 2s linear infinite'
+				'shimmer': 'shimmer 2s linear infinite',
+				'zoom-in': 'zoom-in 0.8s ease-out',
+				'float-in': 'float-in 0.7s ease-out',
+				'blur-in': 'blur-in 0.8s ease-out',
+				'rotate-in': 'rotate-in 0.6s ease-out',
 			},
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
