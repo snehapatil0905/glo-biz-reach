@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const Services = () => {
   useEffect(() => {
@@ -94,15 +95,18 @@ const Services = () => {
   return (
     <div className="min-h-screen py-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-industryspan-navy to-blue-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center scroll-animate">
-            <h1 className="text-5xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Comprehensive consulting solutions to help your business expand globally 
-              and succeed in international markets.
-            </p>
-          </div>
+      <section className="bg-gradient-to-r from-industryspan-navy to-blue-900 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-industryspan-navy/50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimateOnScroll animation="fade-in-down">
+            <div className="text-center">
+              <h1 className="text-5xl font-bold mb-6">Our Services</h1>
+              <p className="text-xl max-w-3xl mx-auto">
+                Comprehensive consulting solutions to help your business expand globally 
+                and succeed in international markets.
+              </p>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -111,30 +115,33 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card 
+              <AnimateOnScroll 
                 key={index}
-                className="scroll-animate hover:shadow-lg transition-all duration-300 hover:scale-105 border-none shadow-md"
+                animation="scale-in"
+                delay={index * 150}
               >
-                <CardHeader className="text-center">
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <CardTitle className="text-xl text-industryspan-navy">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <span className="text-industryspan-green mr-2">✓</span>
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                <Card className="hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border-none shadow-md group cursor-pointer h-full">
+                  <CardHeader className="text-center">
+                    <div className="text-5xl mb-4 group-hover:animate-float transition-transform duration-300">{service.icon}</div>
+                    <CardTitle className="text-xl text-industryspan-navy group-hover:text-industryspan-green transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center opacity-0 animate-fade-in" style={{animationDelay: `${(index * 150) + (featureIndex * 100)}ms`}}>
+                          <span className="text-industryspan-green mr-2 group-hover:animate-pulse">✓</span>
+                          <span className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -143,12 +150,14 @@ const Services = () => {
       {/* Process Section */}
       <section className="py-20 bg-industryspan-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 scroll-animate">
-            <h2 className="text-4xl font-bold text-industryspan-navy mb-4">Our Process</h2>
-            <p className="text-xl text-gray-600">
-              A structured approach to achieving your global expansion goals
-            </p>
-          </div>
+          <AnimateOnScroll animation="fade-in-up">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-industryspan-navy mb-4">Our Process</h2>
+              <p className="text-xl text-gray-600">
+                A structured approach to achieving your global expansion goals
+              </p>
+            </div>
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
@@ -173,49 +182,58 @@ const Services = () => {
                 description: "Continuous improvement and scaling"
               }
             ].map((phase, index) => (
-              <div key={index} className="scroll-animate text-center">
-                <div className="bg-industryspan-green text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {phase.step}
+              <AnimateOnScroll 
+                key={index}
+                animation="scale-in"
+                delay={index * 200}
+              >
+                <div className="text-center group cursor-pointer">
+                  <div className="bg-industryspan-green text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-green-500/25">
+                    {phase.step}
+                  </div>
+                  <h3 className="text-xl font-semibold text-industryspan-navy mb-2 group-hover:text-industryspan-green transition-colors duration-300">
+                    {phase.title}
+                  </h3>
+                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                    {phase.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-industryspan-navy mb-2">
-                  {phase.title}
-                </h3>
-                <p className="text-gray-600">
-                  {phase.description}
-                </p>
-              </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-industryspan-green text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 scroll-animate">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let's discuss which services would be most beneficial for your business goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              asChild
-              size="lg"
-              className="bg-white text-industryspan-green hover:bg-gray-100 border-none"
-            >
-              <a href="mailto:info@amolpalve.com">Schedule Consultation</a>
-            </Button>
-            <Button 
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-industryspan-green"
-            >
-              <a href="https://wa.me/31631185610" target="_blank" rel="noopener noreferrer">
-                WhatsApp Chat
-              </a>
-            </Button>
+      <section className="py-20 bg-industryspan-green text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-industryspan-green opacity-50"></div>
+        <AnimateOnScroll animation="scale-in">
+          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Let's discuss which services would be most beneficial for your business goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                asChild
+                size="lg"
+                className="bg-white text-industryspan-green hover:bg-gray-100 border-none transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                <a href="mailto:info@amolpalve.com">Schedule Consultation</a>
+              </Button>
+              <Button 
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-industryspan-green transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                <a href="https://wa.me/31631185610" target="_blank" rel="noopener noreferrer">
+                  WhatsApp Chat
+                </a>
+              </Button>
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
       </section>
     </div>
   );
