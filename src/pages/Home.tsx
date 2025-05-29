@@ -52,7 +52,7 @@ const Home = () => {
           
           <AnimateOnScroll animation="fade-in-down" delay={200}>
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-industryspan-green to-blue-200 bg-clip-text text-transparent animate-text-glow">
-              Linking <span className="relative">
+              Linking <span className="">
                 Local
                 <div className="absolute -inset-1 bg-gradient-to-r from-industryspan-green to-blue-500 blur opacity-30 animate-pulse-glow"></div>
               </span> Business
@@ -61,7 +61,7 @@ const Home = () => {
           
           <AnimateOnScroll animation="slide-in-left" delay={400}>
             <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-industryspan-green via-blue-400 to-white bg-clip-text text-transparent">
-              to <span className="relative inline-block animate-bounce-gentle">Global</span> Success
+              to <span> Global </span> Success
             </h2>
           </AnimateOnScroll>
           
