@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -173,9 +172,8 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild
-              variant="secondary"
               size="lg"
-              className="bg-white text-industryspan-green hover:bg-gray-100"
+              className="bg-white text-industryspan-green hover:bg-gray-100 border-none"
             >
               <a href="mailto:info@amolpalve.com">Start Conversation</a>
             </Button>
@@ -183,7 +181,7 @@ const About = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-industryspan-green"
+              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-industryspan-green"
             >
               <Link to="/services">Our Services</Link>
             </Button>
