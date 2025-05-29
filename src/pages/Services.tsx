@@ -199,9 +199,8 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               asChild
-              variant="secondary"
               size="lg"
-              className="bg-white text-industryspan-green hover:bg-gray-100"
+              className="bg-white text-industryspan-green hover:bg-gray-100 border-none"
             >
               <a href="mailto:info@amolpalve.com">Schedule Consultation</a>
             </Button>
@@ -209,7 +208,7 @@ const Services = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-industryspan-green"
+              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-industryspan-green"
             >
               <a href="https://wa.me/31631185610" target="_blank" rel="noopener noreferrer">
                 WhatsApp Chat
