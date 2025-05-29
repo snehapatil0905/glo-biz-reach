@@ -250,8 +250,8 @@ const Blog = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-industryspan-green"
-            >
+              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-industryspan-green transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
               <Link to="/contact">Schedule Call</Link>
             </Button>
           </div>

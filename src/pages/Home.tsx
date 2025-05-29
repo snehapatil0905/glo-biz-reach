@@ -42,12 +42,12 @@ const Home = () => {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <AnimateOnScroll animation="fade-in-down">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Linking <span className="text-industryspan-green animate-pulse-glow">Local</span> Business
+              Linking <span className="text-industryspan-green">Local</span> Business
             </h1>
           </AnimateOnScroll>
           <AnimateOnScroll animation="slide-in-left" delay={300}>
             <h2 className="text-4xl md:text-6xl font-bold mb-8">
-              to <span className="text-industryspan-green animate-pulse-glow">Global</span> Success
+              to <span className="text-industryspan-green ">Global</span> Success
             </h2>
           </AnimateOnScroll>
           <AnimateOnScroll animation="slide-in-right" delay={600}>
@@ -68,9 +68,9 @@ const Home = () => {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-industryspan-navy px-8 py-4 text-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-industryspan-green transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/amol-palve/" target="_blank" rel="noopener noreferrer">
                   Connect on LinkedIn
                 </a>
               </Button>

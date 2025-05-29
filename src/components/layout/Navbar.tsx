@@ -28,7 +28,7 @@ const Navbar = () => {
               <img 
                 src="/lovable-uploads/14f81410-34ba-45e7-9aae-69eee7d368e3.png" 
                 alt="IndustrySpan Consulting" 
-                className="h-8 w-auto"
+                className="h-16 w-20"
               />
             </Link>
           </div>
